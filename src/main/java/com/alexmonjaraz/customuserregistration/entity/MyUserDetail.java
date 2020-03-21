@@ -18,13 +18,10 @@ public class MyUserDetail implements UserDetails {
 	
 
 	public MyUserDetail(User user) {
-		// TODO Auto-generated constructor stub
 		this.userName = user.getUserName();
 		this.password = user.getPassword();
-
-		this.authorities = Arrays.stream(user.getRole().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-//		authorities = new ArrayList<GrantedAuthority>();
-//		Arrays.stream(user.getRole().split(",")).forEach(r-> authorities.add(new SimpleGrantedAuthority(r)));
+		authorities = new ArrayList<GrantedAuthority>();
+		Arrays.stream(user.getRole().split(",")).forEach(r-> authorities.add(new SimpleGrantedAuthority(r)));
 	}
 
 	@Override
