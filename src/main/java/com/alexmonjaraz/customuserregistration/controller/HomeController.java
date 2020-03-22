@@ -18,7 +18,6 @@ public class HomeController {
 	
 	@GetMapping("/accessDenied")
 	public String index() {
-		System.out.println("Access Denied");
 		return "access-denied";
 	}
 }
