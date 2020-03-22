@@ -10,4 +10,15 @@ public class HomeController {
 	public String home() {
 		return "index";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/accessDenied")
+	public String index() {
+		System.out.println("Access Denied");
+		return "access-denied";
+	}
 }
